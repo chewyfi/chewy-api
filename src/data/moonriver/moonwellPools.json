@@ -1,0 +1,56 @@
+[
+  {
+    "name": "moonwell-usdc-leverage",
+    "itoken": "0xd0670AEe3698F66e2D4dAf071EB9c690d978BFA8",
+    "oracle": "tokens",
+    "oracleId": "USDC",
+    "decimals": "1e6",
+    "borrowDepth": 4,
+    "borrowPercent": 0.5
+  },
+  {
+    "name": "moonwell-movr-leverage",
+    "itoken": "0x6a1A771C7826596652daDC9145fEAaE62b1cd07f",
+    "oracle": "tokens",
+    "oracleId": "moonriver",
+    "decimals": "1e18",
+    "borrowDepth": 4,
+    "borrowPercent": 0.5
+  },
+  {
+    "name": "moonwell-usdt-leverage",
+    "itoken": "0x36918B66F9A3eC7a59d0007D8458DB17bDffBF21",
+    "oracle": "tokens",
+    "oracleId": "USDT",
+    "decimals": "1e6",
+    "borrowDepth": 4,
+    "borrowPercent": 0.5
+  },
+  {
+    "name": "moonwell-eth-leverage",
+    "itoken": "0x6503D905338e2ebB550c9eC39Ced525b612E77aE",
+    "oracle": "tokens",
+    "oracleId": "ethereum",
+    "decimals": "1e18",
+    "borrowDepth": 4,
+    "borrowPercent": 0.5
+  },
+  {
+    "name": "moonwell-frax-leverage",
+    "itoken": "0x93Ef8B7c6171BaB1C0A51092B2c9da8dc2ba0e9D",
+    "oracle": "tokens",
+    "oracleId": "FRAX",
+    "decimals": "1e18",
+    "borrowDepth": 4,
+    "borrowPercent": 0.5
+  },
+  {
+    "name": "moonwell-btc-supply",
+    "itoken": "0x6E745367F4Ad2b3da7339aee65dC85d416614D90",
+    "oracle": "tokens",
+    "oracleId": "bitcoin",
+    "decimals": "1e8",
+    "borrowDepth": 0,
+    "borrowPercent": 0
+  }
+]

@@ -359,5 +359,24 @@
       "oracleId": "USDC",
       "decimals": "1e6"
     }
+  },
+  {
+    "name": "solarbeam-mfam-movr",
+    "address": "0xE6Bfc609A2e58530310D6964ccdd236fc93b4ADB",
+    "decimals": "1e18",
+    "poolId": 11,
+    "chainId": 1285,
+    "lp0": {
+      "address": "0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1",
+      "oracle": "tokens",
+      "oracleId": "MFAM",
+      "decimals": "1e18"
+    },
+    "lp1": {
+      "address": "0x98878B06940aE243284CA214f92Bb71a2b032B8A",
+      "oracle": "tokens",
+      "oracleId": "WMOVR",
+      "decimals": "1e6"
+    }
   }
 ]

@@ -1,17 +1,4 @@
-const { getAvaxApys } = require('./avax');
-const { getMaticApys } = require('./matic');
-const { getHecoApys } = require('./heco');
-const { getFantomApys } = require('./fantom');
-const { getBSCApys } = require('./bsc');
-const { getOneApys } = require('./one');
-const { getArbitrumApys } = require('./arbitrum');
-const { getCeloApys } = require('./celo');
 const { getMoonriverApys } = require('./moonriver');
-const { getCronosApys } = require('./cronos');
-const { getAuroraApys } = require('./aurora');
-const { getFuseApys } = require('./fuse');
-const { getMetisApys } = require('./metis');
-const { getMoonbeamApys } = require('./moonbeam');
 
 const INIT_DELAY = process.env.INIT_DELAY || 60 * 1000;
 const REFRESH_INTERVAL = 15 * 60 * 1000;
@@ -30,22 +17,7 @@ const updateApys = async () => {
   console.log('> updating apys');
 
   try {
-    const results = await Promise.allSettled([
-      getMaticApys(),
-      getAvaxApys(),
-      getFantomApys(),
-      getHecoApys(),
-      getBSCApys(),
-      getOneApys(),
-      getArbitrumApys(),
-      getCeloApys(),
-      getMoonriverApys(),
-      getCronosApys(),
-      getAuroraApys(),
-      getFuseApys(),
-      getMetisApys(),
-      getMoonbeamApys(),
-    ]);
+    const results = await Promise.allSettled([getMoonriverApys()]);
 
     for (const result of results) {
       if (result.status !== 'fulfilled') {

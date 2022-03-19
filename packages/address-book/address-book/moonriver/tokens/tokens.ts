@@ -14,6 +14,19 @@ const MOVR = {
     'https://app.solarbeam.io/_next/image?url=https%3A%2F%2Fapp.solarbeam.io%2Fimages%2Ftokens%2Fmovr.png&w=32&q=50',
 } as const;
 
+const MFAM = {
+  name: 'MFAM',
+  address: '0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1',
+  symbol: 'MFAM',
+  decimals: 18,
+  chainId: 1285,
+  website: 'https://moonbeam.network/networks/moonriver/',
+  description:
+    'Moonriver is a companion network to Moonbeam and provides a permanently incentivized canary network. New code ships to Moonriver first, where it can be tested and verified under real economic conditions. Once proven, the same code ships to Moonbeam on Polkadot.',
+  logoURI:
+    'https://app.solarbeam.io/_ipx/w_48,q_50/https%3A%2F%2Fraw.githubusercontent.com%2Fsolarbeamio%2Fsolarbeam-tokenlist%2Fmain%2Fassets%2Fmoonriver%2F0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1%2Flogo.png%3Fr%3D1647534798877?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsolarbeamio%2Fsolarbeam-tokenlist%2Fmain%2Fassets%2Fmoonriver%2F0xBb8d88bcD9749636BC4D2bE22aaC4Bb3B01A58F1%2Flogo.png%3Fr%3D1647534798877&w=48&q=50',
+} as const;
+
 const WMOVR_SUSHI = {
   name: 'Wrapped MOVR on Sushiswap',
   address: '0xf50225a84382c74CbdeA10b0c176f71fc3DE0C4d',

@@ -1,4 +1,4 @@
-const { getAmmTokenPrice, getAmmLpPrice } = require('../api/stats/getAmmPrices');
+const { getPrice } = require('../api/stats/getPrices');
 
 const CACHE_TIMEOUT = 10 * 60 * 1000;
 const cache = {};
@@ -33,21 +33,10 @@ const fetchPrice = async ({ oracle, id }) => {
   }
 
   let price = 0;
-  switch (oracle) {
-    case 'lps':
-      price = await getAmmLpPrice(id);
-      break;
-
-    case 'tokens':
-      price = await getAmmTokenPrice(id);
-      break;
-
-    case 'hardcode':
-      price = id;
-      break;
-
-    default:
-      throw new Error(`Oracle '${oracle}' not implemented`);
+  if (oracle === 'tokens') {
+    price = await getPrice(id);
+  } else {
+    throw new Error(`Oracle '${oracle}' not implemented`);
   }
 
   addToCache({ oracle, id, price });
