@@ -1,27 +1,17 @@
-const { getAmmTokensPrices, getAmmLpPrices } = require('../stats/getAmmPrices');
+const { getPrices } = require('../stats/getPrices');
 
-async function lpsPrices(ctx) {
+async function prices(ctx) {
   try {
-    const lpTokenPrices = await getAmmLpPrices();
+    const tokenPrices = await getPrices();
     ctx.status = 200;
-    ctx.body = { ...lpTokenPrices };
+    ctx.body = { ...tokenPrices };
   } catch (err) {
     console.error(err);
     ctx.status = 500;
   }
 }
 
-async function tokenPrices(ctx) {
-  try {
-    const prices = await getAmmTokensPrices();
-    ctx.status = 200;
-    ctx.body = prices;
-  } catch (err) {
-    ctx.throw(500, err);
-  }
-}
 
 module.exports = {
-  lpsPrices,
-  tokenPrices,
+  prices,
 };

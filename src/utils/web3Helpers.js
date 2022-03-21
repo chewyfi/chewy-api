@@ -4,11 +4,11 @@ import { BeefyFinance } from '../../packages/address-book/types/beefyfinance';
 
 import { MOONRIVER_RPC, MOONRIVER_CHAIN_ID } from '../constants';
 
-const MULTICALLS: Record<ChainId, Pick<BeefyFinance, 'multicall'>['multicall']> = {
+const MULTICALLS = {
   [ChainId.moonriver]: addressBookByChainId[ChainId.moonriver].platforms.beefyfinance.multicall,
 };
 
-const clients: Record<keyof typeof ChainId, Web3[]> = {
+const clients = {
   moonriver: [],
 };
 clients.moonriver.push(new Web3(MOONRIVER_RPC));
@@ -17,11 +17,11 @@ export const chainRandomClients = {
   moonriverRandomClient: () => clients.moonriver[~~(clients.moonriver.length * Math.random())],
 };
 
-export const _web3Factory = (chainId: ChainId) => {
+export const _web3Factory = (chainId) => {
   switch (chainId) {
     case MOONRIVER_CHAIN_ID:
       return chainRandomClients.moonriverRandomClient();
   }
 };
 
-export const _multicallAddress = (chainId: ChainId) => MULTICALLS[chainId];
+export const _multicallAddress = (chainId) => MULTICALLS[chainId];

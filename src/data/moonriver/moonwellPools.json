@@ -50,7 +50,7 @@
     "oracle": "tokens",
     "oracleId": "bitcoin",
     "decimals": "1e8",
-    "borrowDepth": 0,
+    "borrowDepth": 1,
     "borrowPercent": 0
   }
 ]

@@ -1,16 +1,19 @@
 const { getMoonriverApys } = require('./moonriver');
 
-const INIT_DELAY = process.env.INIT_DELAY || 60 * 1000;
-const REFRESH_INTERVAL = 15 * 60 * 1000;
+const INIT_DELAY = process.env.INIT_DELAY || 60 * 100;
+const REFRESH_INTERVAL = 6000 * 60 * 2;
 
 let apys = {};
-let apyBreakdowns = {};
+let lastUpdated = Date.now();
 
 const getApys = () => {
-  return {
-    apys,
-    apyBreakdowns,
-  };
+  if (Object.keys(apys).length === 0) {
+    updateApys();
+  } else if (Date.now() > lastUpdated + REFRESH_INTERVAL) {
+    updateApys();
+  }
+
+  return apys;
 };
 
 const updateApys = async () => {
@@ -27,26 +30,8 @@ const updateApys = async () => {
 
       // Set default APY values
       let mappedApyValues = result.value;
-      let mappedApyBreakdownValues = {};
-
-      // Loop through key values and move default breakdown format
-      // To require totalApy key
-      for (const [key, value] of Object.entries(result.value)) {
-        mappedApyBreakdownValues[key] = {
-          totalApy: value,
-        };
-      }
-
-      // Break out to apy and breakdowns if possible
-      let hasApyBreakdowns = 'apyBreakdowns' in result.value;
-      if (hasApyBreakdowns) {
-        mappedApyValues = result.value.apys;
-        mappedApyBreakdownValues = result.value.apyBreakdowns;
-      }
 
       apys = { ...apys, ...mappedApyValues };
-
-      apyBreakdowns = { ...apyBreakdowns, ...mappedApyBreakdownValues };
     }
 
     console.log('> updated apys');
@@ -54,7 +39,7 @@ const updateApys = async () => {
     console.error('> apy initialization failed', err);
   }
 
-  setTimeout(updateApys, REFRESH_INTERVAL);
+  lastUpdated = Date.now();
 };
 
 setTimeout(updateApys, INIT_DELAY);

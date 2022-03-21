@@ -53,7 +53,6 @@ const getPoolApy = async pool => {
 const getSupplyApys = async (pool, BLOCKS_PER_YEAR) => {
   const itokenContract = new web3.eth.Contract(IToken, pool.itoken);
   const comptrollerContract = new web3.eth.Contract(Comptroller, COMPTROLLER);
-  const supplySpeed = await comptrollerContract.methods.supplyRewardSpeeds(0, pool.itoken).call();
 
   let mfamPrice = await fetchPrice({ oracle: 'tokens', id: 'moonwell' });
   let movrPrice = await fetchPrice({ oracle: 'tokens', id: 'moonriver' });

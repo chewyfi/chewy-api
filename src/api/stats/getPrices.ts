@@ -12,7 +12,7 @@ const knownPrices = {
   FRAX: 1,
 };
 
-let tokenPricesCache: Promise<any>;
+let tokenPricesCache;
 
 const updatePrices = async () => {
   console.log('> updating token prices');

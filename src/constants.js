@@ -8,11 +8,11 @@ const HOURLY_HPY = 8760;
 const DAILY_HPY = 365;
 const WEEKLY_HPY = 52;
 
-const MOONRIVER_RPC = process.env.MOONRIVER_RPC || 'https://moonriver.api.onfinality.io/public';
+const MOONRIVER_RPC = 'https://moonriver.api.onfinality.io/rpc?apikey=d5025cb5-14b6-4300-b207-cb1f9c1a073a';
 
 const MOONRIVER_CHAIN_ID = ChainId.moonriver;
 
-const MULTICHAIN_RPC: Record<ChainId, string> = {
+const MULTICHAIN_RPC = {
   [ChainId.moonriver]: MOONRIVER_RPC,
 };
 
