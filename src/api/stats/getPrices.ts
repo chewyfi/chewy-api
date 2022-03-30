@@ -10,6 +10,9 @@ const knownPrices = {
   USDT: 1,
   USDC: 1,
   FRAX: 1,
+  '3pool': 1,
+  'FRAX-3pool': 1,
+  'KSM-pool': 1
 };
 
 let tokenPricesCache;
