@@ -1,6 +1,6 @@
 const { getApys } = require('./getApys');
 
-const TIMEOUT = 5 * 60 * 1000;
+const TIMEOUT = 60 * 60 * 1000;
 
 async function apy(ctx) {
   try {
