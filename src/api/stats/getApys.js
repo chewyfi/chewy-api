@@ -20,6 +20,7 @@ const updateApys = async () => {
   console.log('> updating apys');
 
   try {
+    console.log('before fetching results')
     const results = await Promise.allSettled([getMoonriverApys()]);
 
     for (const result of results) {

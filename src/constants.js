@@ -8,7 +8,7 @@ const HOURLY_HPY = 8760;
 const DAILY_HPY = 365;
 const WEEKLY_HPY = 52;
 
-const MOONRIVER_RPC = 'https://moonriver.api.onfinality.io/rpc?apikey=d5025cb5-14b6-4300-b207-cb1f9c1a073a';
+const MOONRIVER_RPC = 'https://moonriver.blastapi.io/734c0c7f-091c-495e-898a-822e98c3181b';
 
 const MOONRIVER_CHAIN_ID = ChainId.moonriver;
 
