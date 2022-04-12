@@ -1,14 +1,8 @@
 `use strict`;
 import { fetchCoinGeckoPrices } from '../../utils/fetchCoinGeckoPrices';
 
-// const INIT_DELAY = 0 * 60 * 1000;
-
-const INIT_DELAY = 0;
-
-const REFRESH_INTERVAL = 0;
-
-
-// const REFRESH_INTERVAL = 5 * 60 * 1000;
+const INIT_DELAY = 0 * 60 * 1000;
+const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 const coinGeckoCoins = ['bitcoin', 'moonriver', 'ethereum', 'moonwell'];
 
