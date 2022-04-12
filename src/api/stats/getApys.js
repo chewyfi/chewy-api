@@ -1,7 +1,11 @@
 const { getMoonriverApys } = require('./moonriver');
 
-const INIT_DELAY = process.env.INIT_DELAY || 60 * 100;
-const REFRESH_INTERVAL = 1000 * 60 * 10;
+// const INIT_DELAY = process.env.INIT_DELAY || 60 * 100;
+const INIT_DELAY = 0;
+// const REFRESH_INTERVAL = 1000 * 60 * 10;
+
+const REFRESH_INTERVAL = 0;
+
 
 let apys = {};
 let lastUpdated = Date.now();
