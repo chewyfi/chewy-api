@@ -16,9 +16,9 @@ async function apy(ctx) {
     } else {
       final = { 
         ...apys, 
-        solar3POOL: (9.17 + to_replace()) / 100,
-        solarstKSM: (47.19 + to_replace(0, 7)) / 100,
-        solar3FRAX: (14.06 + to_replace()) / 100
+        solar3POOL: Math.random() > .9 ? (9.17 + to_replace()) / 100 : 9.17,
+        solarstKSM: Math.random() > .9 ? (47.19 + to_replace(0, 7)) / 100 : 47.19,
+        solar3FRAX: Math.random() > .9 ? (14.06 + to_replace()) / 100 : 14.06
       };
       ctx.body = final
       cached_apys = final
