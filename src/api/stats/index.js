@@ -14,13 +14,14 @@ async function apy(ctx) {
       ctx.body = 'There is no APYs data yet';
       ctx.body = cached_apy
     } else {
-      ctx.body = { 
+      final = { 
         ...apys, 
         solar3POOL: (9.17 + to_replace()) / 100,
         solarstKSM: (47.19 + to_replace(0, 7)) / 100,
         solar3FRAX: (14.06 + to_replace()) / 100
       };
-      cached_apys = ctx.body
+      ctx.body = final
+      cached_apys = final
     }
 
     ctx.status = 200;
