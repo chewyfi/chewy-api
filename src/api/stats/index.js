@@ -20,7 +20,7 @@ async function apy(ctx) {
         solarstKSM: (47.19 + to_replace(0, 7)) / 100,
         solar3FRAX: (14.06 + to_replace()) / 100
       };
-      cached_apys = apys
+      cached_apys = ctx.body
     }
 
     ctx.status = 200;
