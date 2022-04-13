@@ -16,9 +16,9 @@ async function apy(ctx) {
     } else {
       ctx.body = { 
         ...apys, 
-        solar3POOL: 9.17 + to_replace(),
-        solarstKSM: 47.19 + to_replace(0, 7),
-        solar3FRAX: 14.06 + to_replace()
+        solar3POOL: (9.17 + to_replace()) / 100,
+        solarstKSM: (47.19 + to_replace(0, 7)) / 100,
+        solar3FRAX: (14.06 + to_replace()) / 100
       };
       cached_apys = apys
     }
