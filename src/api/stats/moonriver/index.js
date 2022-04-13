@@ -11,7 +11,7 @@ const getMoonriverApys = async () => {
 
   for (const result of results) {
     if (result.status !== 'fulfilled') {
-      console.warn('getMoonriverApys error', result.reason);
+      console.warn('getMoonriverApys error for' , result, result.reason);
       continue;
     }
 
@@ -20,6 +20,7 @@ const getMoonriverApys = async () => {
 
     apys = { ...apys, ...mappedApyValues };
   }
+
   return apys;
 };
 
