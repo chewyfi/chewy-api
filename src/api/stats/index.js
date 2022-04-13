@@ -2,16 +2,28 @@ const { getApys } = require('./getApys');
 
 const TIMEOUT = 10 * 60 * 1000;
 
-cached_apy = {"moonwell-usdc-leverage":0.07384731987096385,"moonwell-movr-leverage":0.3623970470078607,"moonwell-usdt-leverage":0.16211915651642156,"moonwell-eth-leverage":0.05306803385524843,"moonwell-frax-leverage":0.10943178043703612,"moonwell-btc-supply":0.06774774340807477,"solar3POOL":0.1000382477235411,"solarstKSM":0.5236930294333166,"solar3FRAX":0.1422517105807547}
+cached_apys = {
+  'moonwell-usdc-leverage': 0.07496099695942712,
+  'moonwell-movr-leverage': 0.3530856961352685,
+  'moonwell-usdt-leverage': 0.17029377312590646,
+  'moonwell-eth-leverage': 0.05308034898453193,
+  'moonwell-frax-leverage': 0.11154158344971866,
+  'moonwell-btc-supply': 0.06954675086184357,
+  solar3POOL: 0.0917,
+  solarstKSM: 0.4719,
+  solar3FRAX: 0.1406
+}
+
 async function apy(ctx) {
   try {
     // ctx.request.socket.setTimeout(TIMEOUT);
     let apys = await getApys();
+    console.log("CACHED APY ", cached_apys)
 
     if (Object.keys(apys).length === 0) {
       // TODO: Can we get the previous response?
       ctx.body = 'There is no APYs data yet';
-      ctx.body = cached_apy
+      ctx.body = {...cached_apys}
     } else {
       final = { 
         ...apys, 

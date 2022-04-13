@@ -20,9 +20,7 @@ const updateApys = async () => {
   console.log('> updating apys');
 
   try {
-    console.log('before fetching results 5')
     const results = await Promise.allSettled([getMoonriverApys()]);
-    console.log('After results ', results)
 
     for (const result of results) {
       if (result.status !== 'fulfilled') {
@@ -33,7 +31,6 @@ const updateApys = async () => {
       // Set default APY values
       let mappedApyValues = result.value;
 
-      console.log('Mapped apy values ', mappedApyValues)
 
       apys = { ...apys, ...mappedApyValues };
     }
