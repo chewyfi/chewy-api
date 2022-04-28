@@ -9,9 +9,9 @@ cached_apys = {
   'moonwell-eth-leverage': 0.05308034898453193,
   'moonwell-frax-leverage': 0.11154158344971866,
   'moonwell-btc-supply': 0.06954675086184357,
-  solar3POOL: 0.0917,
-  solarstKSM: 0.4719,
-  solar3FRAX: 0.1406
+  '3POOL': 0.0917,
+  'KSM-stKSM': 0.4719,
+  FRAX3POOL: 0.1406
 }
 
 async function apy(ctx) {
@@ -27,9 +27,9 @@ async function apy(ctx) {
     } else {
       final = { 
         ...apys, 
-        solar3POOL: Math.random() > .9 ? (9.17 + to_replace()) / 100 : 9.17 / 100,
-        solarstKSM: Math.random() > .9 ? (47.19 + to_replace(0, 7)) / 100 : 47.19 / 100,
-        solar3FRAX: Math.random() > .9 ? (14.06 + to_replace()) / 100 : 14.06 / 100
+        '3POOL': Math.random() > .9 ? (9.17 + to_replace()) / 100 : 9.17 / 100,
+        'KSM-stKSM': Math.random() > .9 ? (47.19 + to_replace(0, 7)) / 100 : 47.19 / 100,
+        FRAX3POOL: Math.random() > .9 ? (14.06 + to_replace()) / 100 : 14.06 / 100
       };
       ctx.body = final
       cached_apys = final
