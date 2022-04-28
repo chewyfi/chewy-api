@@ -10,7 +10,6 @@ const getBlockTime = require('../../../utils/getBlockTime');
 const { BASE_HPY, MOONRIVER_CHAIN_ID: chainId } = require('../../../constants');
 
 const COMPTROLLER = '0x0b7a0EAA884849c6Af7a129e899536dDDcA4905E';
-const MFAM_PRICE = 0.017097;
 // Rewards: MFAM => 0, MOVR => 1
 const getMoonwellApys = async () => {
   let apys = {};
@@ -75,7 +74,7 @@ const getSupplyApys = async (pool, BLOCKS_PER_YEAR) => {
   const supplyApyPerYear = supplyRate.times(BLOCKS_PER_YEAR).div('1e18');
 
   const comp0PerYear = compRate0.times(BLOCKS_PER_YEAR);
-  const comp0PerYearInUsd = comp0PerYear.div('1e18').times(MFAM_PRICE);
+  const comp0PerYearInUsd = comp0PerYear.div('1e18').times(mfamPrice);
   const comp1PerYear = compRate1.times(BLOCKS_PER_YEAR);
   const comp1PerYearInUsd = comp1PerYear.div('1e18').times(movrPrice);
 
@@ -112,7 +111,7 @@ const getBorrowApys = async (pool, BLOCKS_PER_YEAR) => {
 
   const borrowApyPerYear = borrowRate.times(BLOCKS_PER_YEAR).div('1e18');
   const comp0PerYear = compRate0.times(BLOCKS_PER_YEAR);
-  const comp0PerYearInUsd = comp0PerYear.div('1e18').times(MFAM_PRICE);
+  const comp0PerYearInUsd = comp0PerYear.div('1e18').times(mfamPrice);
   const comp1PerYear = compRate1.times(BLOCKS_PER_YEAR);
   const comp1PerYearInUsd = comp1PerYear.div('1e18').times(movrPrice);
 
